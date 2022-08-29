@@ -20,5 +20,10 @@ const provider = new GoogleAuthProvider();
 export const signInWithGoogle = () =>{
     signInWithPopup(auth,provider).then((result) =>{
         console.log(result);
+        const name = result.user.displayName;
+        const picture = result.user.photoURL;
+
+        localStorage.setItem("name",name);
+        localStorage.setItem("picture",picture);
     }).catch((err) => console.log(err));
 }
