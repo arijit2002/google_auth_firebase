@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getAuth } from "firebase/auth";
 
+//require('dotenv').config({ path: '../' })
+//console.log(process.env.API)
 const firebaseConfig = {
   apiKey: "AIzaSyA0M0cNl_JE4kyJuSVhEbdoEwD_fYSVHDw",
   authDomain: "basics-6f1a6.firebaseapp.com",
@@ -13,4 +15,4 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+export const auth = getAuth(app);
